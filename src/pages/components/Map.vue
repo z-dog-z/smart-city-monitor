@@ -8,7 +8,7 @@ import { onMounted, ref } from 'vue'
 const mapBox = ref(null);
 const loadMap = () => {
     AMapLoader.load({
-        key: "f38c9d089cc3e3dcdfadea039f4a130f", //申请好的Web端开发者key，调用 load 时必填
+        key: import.meta.env.VITE_AMAP_KEY, //Web端开发者key，从 .env 读取，不写进代码
         version: "2.0", //指定要加载的 JS API 的版本，缺省时默认为 1.4.15
     })
         .then((AMap) => {
